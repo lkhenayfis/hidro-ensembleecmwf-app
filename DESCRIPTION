@@ -1,0 +1,15 @@
+Project: corrigeensemble
+Title: Correcao Distribucional De Simulacoes Ensemble
+Version: 0.0.0.9000
+Authors@R: 
+    person("Lucas", "Khenayfis", , "lucaskhenayfis@example.com", role = c("aut", "cre"))
+Description: Conjunto de funcionalidades para modelagem distribucional de simulacoes ensemble de 
+    variaveis meteorologicas. Contem funcoes para leitura dedicadas a uma estrutura de arquivo 
+    especifica, funcoes para estimacao e selecao de modelos, bem como para visualizacao e 
+    diagnostico de resultados.
+License: MIT + file LICENSE
+Depends:
+    R (>= 4.0),
+    data.table (>= 1.14),
+    arrow (>= 11)
+Encoding: UTF-8
