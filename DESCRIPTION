@@ -1,4 +1,4 @@
-Project: corrigeensemble
+Project: ensemble-ecmwf
 Title: Correcao Distribucional De Simulacoes Ensemble
 Version: 0.0.0.9000
 Authors@R: 
@@ -10,6 +10,9 @@ Description: Conjunto de funcionalidades para modelagem distribucional de simula
 License: MIT + file LICENSE
 Depends:
     R (>= 4.0),
+    dbrenovaveis
     data.table (>= 1.14),
     arrow (>= 11)
 Encoding: UTF-8
+Remotes:
+    lkhenayfis/dbrenovaveis@parquet
