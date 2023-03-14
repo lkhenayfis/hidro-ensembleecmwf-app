@@ -1,6 +1,7 @@
 ########################################## CLASSE DADOPREC #########################################
 
 library(dbrenovaveis)
+library(data.table)
 
 # Redefine os defaults das funcoes de dbrenovaveis para rodar com o banco de prec
 # Isso so e necessario enquanto o backend nao e generalizado para lidar com campos arbitrarios
@@ -9,6 +10,8 @@ formals(getverificado)$campos <- "prec"
 formals(getprevisto)$campos <- c("prec", "membro")
 formals(getprevisto)$modelos <- "ECMWF"
 formals(getprevisto)$horizontes <- 1
+
+conector_default <- conectabucket("s3://ons-pem-historico", "hidro/ensemble-ecmwf", "parquet")
 
 # LEITURA DOS ARQUIVOS PROCESSADOS -----------------------------------------------------------------
 
@@ -26,7 +29,7 @@ formals(getprevisto)$horizontes <- 1
 #' @value objeto \code{dadoprec}, contendo o verificado e previsto nas datas comuns dentro da faixa
 #'     \code{datas} do posto \code{posto} e horizonte \code{horizonte}
 
-ledado <- function(posto, horizonte = 1, datas = "*", conexao = conectalocal("data/ensemble")) {
+ledado <- function(posto, horizonte = 1, datas = "*", conexao = conector_default) {
 
     if(length(horizonte) > 1) {
         warning("'horizonte' tem comprimento maior que 1, apenas o primeiro elemento sera usado")
