@@ -50,7 +50,7 @@ ledado <- function(posto, horizonte = 1, datas = "*", conexao = conector_default
     verif <- verif[verifINprev]
     prev <- prev[prevINverif]
 
-    new_dadoprec(verif, prev)
+    new_dadoprec(verif, prev, posto)
 }
 
 #' Construtor Interno De \code{dadoprec}
@@ -64,6 +64,7 @@ ledado <- function(posto, horizonte = 1, datas = "*", conexao = conector_default
 new_dadoprec <- function(verif, prev) {
 
     new <- list(verificado = verif, previsto = prev)
+    attr(new, "posto") <- posto
     class(new) <- "dadoprec"
 
     return(new)
