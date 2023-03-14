@@ -16,4 +16,4 @@ Depends:
     aws.s3 (>= 0.3)
 Encoding: UTF-8
 Remotes:
-    lkhenayfis/dbrenovaveis@parquet
+    lkhenayfis/dbrenovaveis@buckets3

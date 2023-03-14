@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.2.2",
+    "Version": "4.2.1",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -163,13 +163,14 @@
       "RemoteHost": "api.github.com",
       "RemoteRepo": "dbrenovaveis",
       "RemoteUsername": "lkhenayfis",
-      "RemoteRef": "parquet",
-      "RemoteSha": "ccf0380b0d9f6e65ff069cd579a78d805fe156c8",
-      "Hash": "412aeaaae0e8368e527d965032528b1a",
+      "RemoteRef": "buckets3",
+      "RemoteSha": "718c3f9a388af9aa19258063e9b0569322793195",
+      "Hash": "eb399dd841a964b9ff13ecee45107291",
       "Requirements": [
         "DBI",
         "RPostgreSQL",
-        "data.table"
+        "data.table",
+        "jsonlite"
       ]
     },
     "digest": {
