@@ -10,6 +10,7 @@ Description: Conjunto de funcionalidades para modelagem distribucional de simula
 License: MIT + file LICENSE
 Depends:
     R (>= 4.0),
+    ggplot2 (>= 3.4),
     dbrenovaveis,
     data.table (>= 1.14),
     arrow (>= 11),
