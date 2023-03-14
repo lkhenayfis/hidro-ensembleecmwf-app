@@ -10,9 +10,10 @@ Description: Conjunto de funcionalidades para modelagem distribucional de simula
 License: MIT + file LICENSE
 Depends:
     R (>= 4.0),
-    dbrenovaveis
+    dbrenovaveis,
     data.table (>= 1.14),
-    arrow (>= 11)
+    arrow (>= 11),
+    aws.s3 (>= 0.3)
 Encoding: UTF-8
 Remotes:
     lkhenayfis/dbrenovaveis@parquet
