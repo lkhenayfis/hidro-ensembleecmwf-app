@@ -29,7 +29,7 @@ conector_default <- conectabucket("s3://ons-pem-historico", "hidro/ensemble-ecmw
 #' @value objeto \code{dadoprec}, contendo o verificado e previsto nas datas comuns dentro da faixa
 #'     \code{datas} do posto \code{posto} e horizonte \code{horizonte}
 
-ledado <- function(posto, horizonte = 1, datas = "*", conexao = conector_default) {
+ledadoprec <- function(posto, horizonte = 1, datas = "*", conexao = conector_default) {
 
     if(length(horizonte) > 1) {
         warning("'horizonte' tem comprimento maior que 1, apenas o primeiro elemento sera usado")
@@ -50,7 +50,7 @@ ledado <- function(posto, horizonte = 1, datas = "*", conexao = conector_default
     verif <- verif[verifINprev]
     prev <- prev[prevINverif]
 
-    new_dadoprec(verif, prev, posto)
+    new_dadoprec(verif, prev, posto, horizonte)
 }
 
 #' Construtor Interno De \code{dadoprec}
@@ -58,13 +58,16 @@ ledado <- function(posto, horizonte = 1, datas = "*", conexao = conector_default
 #' Funcao interna, nao deve ser chamada diretamente pelo usuario
 #' 
 #' @param verif,prev dados verificados e previstos, padronizados
+#' @param posto o posto ao qual o dado se refere
+#' @param horizonte horizonte de previsao do ensemble
 #' 
 #' @return objeto \code{dadoprec}, uma lista de dois elmentos
 
-new_dadoprec <- function(verif, prev) {
+new_dadoprec <- function(verif, prev, posto, horizonte) {
 
     new <- list(verificado = verif, previsto = prev)
     attr(new, "posto") <- posto
+    attr(new, "horizonte") <- horizonte
     class(new) <- "dadoprec"
 
     return(new)

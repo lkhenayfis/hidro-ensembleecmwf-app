@@ -43,7 +43,7 @@ plot.dadosprec <- function(x, datas = "*", confs = c(90, 95)) {
     gg <- ggplot() +
         geom_line(data = dlines, aes(data_hora, prec, linetype = tipo)) +
         geom_ribbon(data = dshade, aes(data_hora_previsao, ymin = lower, ymax = upper, fill = variable), alpha = .3) +
-        labs(title = attr(x, "posto")) +
+        labs(title = paste0(attr(x, "posto"), " (h = ", attr(x, "horizonte"), ")")) +
         scale_fill_discrete(name = "Intervalo") +
         scale_linetype_discrete(name = "Tipo", labels = c("Observado", "Previsto")) +
         theme_bw()
